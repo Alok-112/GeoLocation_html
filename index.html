@@ -16,15 +16,15 @@
         function getLocation(){
             if(navigator.geolocation)
             {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.watchPosition(showPosition);
             }
             else
             {
-x.innerHTML="Geolocation is not supported in this browser.";
+              x.innerHTML="Geolocation is not supported in this browser.";
             }
         }
 
-        function showPosition(){
+        function showPosition(position){
             x.innerHTML="Latitude"+ position.coords.latitude+
             "<br>Longitude"+position.coords.longitude;
         }
